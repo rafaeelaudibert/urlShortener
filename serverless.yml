@@ -3,16 +3,6 @@ service: url-shortener
 plugins:
   - serverless-dotenv-plugin
   - serverless-offline
-custom:
-  customDomain:
-    domainName: ${self:custom.domainName}
-    certificateName: '*.rafaaudibert.dev'
-    createRoute53Record: true
-    endpointType: 'regional'
-    securityPolicy: tls_1_2
-    apiType: rest
-    autoDomain: false
-  domainName: url.rafaaudibert.dev
 
 provider:
   name: aws
@@ -23,7 +13,7 @@ provider:
     MONGO_URI: ${env:MONGO_URI}
     MONGO_DATABASE: ${env:MONGO_DATABASE}
     MONGO_COLLECTION: ${env:MONGO_COLLECTION}
-    SECRET: ${env:SECRET}
+    DB_SECRET: ${env:DB_SECRET}
     
 functions:
   shorten:
