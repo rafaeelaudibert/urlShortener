@@ -16,10 +16,10 @@ jobs:
         aws-region: us-east-1
     - name: Install dependencies
       run: npm install
+    - name: Create .env file
+      run: | 
+        cat > .env << EOF
+        ${{ secrets.DOTENV }}
+        EOF
     - name: Deploy lambda
       run: npm run deploy
-      env:
-        MONGO_URI: ${{ secrets.MONGO_URI }}
-        MONGO_DATABASE: ${{ secrets.MONGO_DATABASE }}
-        MONGO_COLLECTION: ${{ secrets.MONGO_COLLECTION }}
-        ENDPOINT_SECRET: ${{ secrets.ENDPOINT_SECRET }}
