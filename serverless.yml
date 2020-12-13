@@ -13,7 +13,7 @@ provider:
     MONGO_URI: ${env:MONGO_URI}
     MONGO_DATABASE: ${env:MONGO_DATABASE}
     MONGO_COLLECTION: ${env:MONGO_COLLECTION}
-    DB_SECRET: ${env:DB_SECRET}
+    ENDPOINT_SECRET: ${env:ENDPOINT_SECRET}
     
 functions:
   shorten:
