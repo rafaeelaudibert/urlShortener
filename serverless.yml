@@ -3,6 +3,16 @@ service: url-shortener
 plugins:
   - serverless-dotenv-plugin
   - serverless-offline
+custom:
+  customDomain:
+    domainName: ${self:custom.domainName}
+    certificateName: '*.rafaaudibert.dev'
+    createRoute53Record: true
+    endpointType: 'regional'
+    securityPolicy: tls_1_2
+    apiType: rest
+    autoDomain: false
+  domainName: url.rafaaudibert.dev
 
 provider:
   name: aws
@@ -22,7 +32,7 @@ functions:
     events:
       - http:
           method: post
-          path: /shorten
+          path: /s
           cors: true
   redirect:
     name: ${self:service}-redirect-${self:provider.stage}
@@ -30,7 +40,7 @@ functions:
     events:
       - http:
           method: get
-          path: /redirect/{url}
+          path: /r/{url}
           cors: true
           request:
             parameters:

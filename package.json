@@ -4,7 +4,8 @@
   "description": "Custom URL Shortener using MongoDB & AWS Lambda",
   "main": "index.js",
   "scripts": {
-    "start": "sls offline"
+    "start": "sls offline",
+    "deploy": "sls deploy -s prd"
   },
   "author": "RafaAudibert <rafaeelaudibert@gmail.com>",
   "license": "ISC",
