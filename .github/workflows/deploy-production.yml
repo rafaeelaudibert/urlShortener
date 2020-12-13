@@ -18,3 +18,8 @@ jobs:
       run: npm install
     - name: Deploy lambda
       run: npm run deploy
+      env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+        MONGO_DATABASE: ${{ secrets.MONGO_DATABASE }}
+        MONGO_COLLECTION: ${{ secrets.MONGO_COLLECTION }}
+        DB_SECRET: ${{ secrets.DB_SECRET }}
