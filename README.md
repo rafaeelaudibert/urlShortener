@@ -1,5 +1,10 @@
 # URL Shortener 📝
 
+> **No longer deployed.** This ran at `url.rafaaudibert.dev` on AWS Lambda and API
+> Gateway until September 2026, when the AWS account was decommissioned in favour of
+> Cloudflare. The endpoints below no longer resolve. The code is kept for reference and
+> still works if you deploy it yourself, following the instructions below.
+
 Custom URL Shortener, using MongoDB and AWS Lambda.
 
 ## Usage 🖥️
